@@ -66,6 +66,8 @@ int main(){
         }
         if (answer == "setPetals"){
             int newPetals;
+            cout << "How many petals does this flower have?" << endl;
+            cin >> newPetals;
             Tulip.setPetals(&newPetals);
         }
         if(answer == "quit"){
@@ -92,9 +94,6 @@ Flower::Flower(string thisName, double thisHeight, int thisPetals){
 }
 //mutator function code
 void Flower::setPetals(int* newPetals){
-    cout << "How many petals does this flower have?" << endl;
-    cin >> *newPetals;
-    petals = *newPetals;
     if (*newPetals >= 0){
         petals = *newPetals;
     }else{
