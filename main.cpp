@@ -18,12 +18,8 @@ class Flower{
         //default constructor
         Flower();
     public:
-        //initializing constructor
-        Flower(string thisName, double thisHeight, int thisPetals){
-            name = thisName;
-            height = thisHeight;
-            petals = thisPetals;
-        }
+            //initializing constructor
+        Flower(string thisName, double thisHeight, int thisPetals);
         //function to access name (accessor)
         string getName(){
             return name;
@@ -37,14 +33,9 @@ class Flower{
             return petals;
         }
         //function for changing petals (mutator)
-        void setPetals(int* petals){
-            cout << "How many petals does this flower have?" << endl;
-            cin >> *petals;
-        }
+        void setPetals(int* newPetals);
         //function to show the object info
-        void displayFlower(){
-            cout << "This flower is called a " << name << ". It is " << height << " inches tall." << "It has " << petals << " petals." << endl;
-        }
+        void display();
 
 };
 
@@ -53,8 +44,8 @@ class Flower{
 int main(){
 
 //test code
-    Flower Tulip("tulip", 13.1, 5);
-    Tulip.displayFlower();
+    Flower Tulip("tulip", -13.1, 5);
+    Tulip.display();
 
     //user input
     while(true){
@@ -74,13 +65,43 @@ int main(){
             cout << "The flower has " << temp << " petals." << endl;
         }
         if (answer == "setPetals"){
-            // Tulip.setPetals(&petals);
+            int newPetals;
+            Tulip.setPetals(&newPetals);
         }
         if(answer == "quit"){
             break;
         }
         if (answer == "displayFlower"){
-            Tulip.displayFlower();
+            Tulip.display();
         }
     }
+}
+
+Flower::Flower(string thisName, double thisHeight, int thisPetals){
+    name = thisName;
+    if (thisHeight >= 0){
+        height = thisHeight;
+    }else{
+        height = 0;
+    }
+    if (thisPetals >= 0){
+        petals = thisPetals;
+    }else{
+        petals = 0;
+    }
+}
+
+void Flower::setPetals(int* newPetals){
+    cout << "How many petals does this flower have?" << endl;
+    cin >> *newPetals;
+    petals = *newPetals;
+    if (*newPetals >= 0){
+        petals = *newPetals;
+    }else{
+        petals = 0;
+    }
+}
+
+void Flower::display(){
+    cout << "This flower is called a " << name << ". It is " << height << " inches tall. " << "It has " << petals << " petals." << endl;
 }
