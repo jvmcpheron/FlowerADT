@@ -76,7 +76,7 @@ int main(){
         }
     }
 }
-
+//constructor code
 Flower::Flower(string thisName, double thisHeight, int thisPetals){
     name = thisName;
     if (thisHeight >= 0){
@@ -90,7 +90,7 @@ Flower::Flower(string thisName, double thisHeight, int thisPetals){
         petals = 0;
     }
 }
-
+//mutator function code
 void Flower::setPetals(int* newPetals){
     cout << "How many petals does this flower have?" << endl;
     cin >> *newPetals;
@@ -101,7 +101,7 @@ void Flower::setPetals(int* newPetals){
         petals = 0;
     }
 }
-
+//display function code
 void Flower::display(){
     cout << "This flower is called a " << name << ". It is " << height << " inches tall. " << "It has " << petals << " petals." << endl;
 }
