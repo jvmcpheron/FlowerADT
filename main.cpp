@@ -18,7 +18,7 @@ class Flower{
         //default constructor
         Flower();
     public:
-            //initializing constructor
+        //prototype initializing constructor
         Flower(string thisName, double thisHeight, int thisPetals);
         //function to access name (accessor)
         string getName(){
@@ -32,9 +32,9 @@ class Flower{
         int getPetals(){
             return petals;
         }
-        //function for changing petals (mutator)
+        //prototype function for changing petals (mutator)
         void setPetals(int* newPetals);
-        //function to show the object info
+        //prototype function to show the object info
         void display();
 
 };
